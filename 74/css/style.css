@@ -350,3 +350,44 @@ button{
     padding-right: 34px; /* 開閉アイコンの余白確保 */
   }
 }
+
+/* PCでは今の横並びを維持（何も書かなくてOK） */
+
+/* スマホサイズ（幅640px以下）で縦並びに切り替え */
+@media (max-width: 640px) {
+    /* 各行を縦並びに強制 */
+    .accordionContent p {
+        display: block !important;        /* flexを上書き */
+        margin: 16px 0;                   /* 行間を広め */
+    }
+
+    /* ラベル部分を上段独占 */
+    .accordionContent p::before {
+        display: block !important;
+        margin-bottom: 8px;               /* ラベルと値の間隔 */
+        white-space: nowrap;              /* ラベル折り返さない */
+        font-size: 14px;                  /* 少し小さめで収まる */
+    }
+
+    /* 値＋星の部分を横並びのまま（スマホでも収まるよう調整） */
+    .accordionContent p > span,           /* 値と星のspanを横並び */
+    .accordionContent p > .starsbar {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;              /* 折り返さない */
+    }
+
+    /* 星を少し小さくして横幅節約 */
+    .accordionContent .starsbar {
+        font-size: 16px;                  /* PCより小さめ */
+        letter-spacing: 0.5px;
+    }
+
+    /* メモ本文は複数行OK */
+    .accordionContent p.memo {
+        white-space: pre-wrap;
+        word-break: break-word;
+        line-height: 1.6;
+    }
+}
