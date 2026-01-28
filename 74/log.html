@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>お酒記録一覧</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/log.js" type="text/javascript" charset="UTF-8" defer></script>
+    </head>
+    <body>
+        <header>
+            <img src="img/logo.png" alt="アプリ名ロゴ「味酒帳」">
+        </header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">入力</a></li>
+                    <li><a href="log.html" class="active">記録一覧</a></li>
+                </ul>
+            </nav>
+            <div class="mainContent">
+                <div class="card">
+                <h2 class="titleH2">&#127866;記録一覧&#127866;</h2>
+                <div class="sortSelect">
+                    <label for="sortBy">並び順：</label>
+                    <select id="sortBy" onchange="displayDrinks()">
+                        <option value="sweetness" selected>甘さが高い順</option>
+                        <option value="preference">好みが高い順</option>
+                    </select>
+                </div>
+                <div id="drinkList">
+                <div class="category" data-category="日本酒">
+                    <h3>日本酒</h3>
+                    <div class="items">
+
+                    </div>  <!-- ここにaccordionを追加していく -->
+                </div>
+                <div class="category" data-category="ビール">
+                    <h3>ビール</h3>
+                    <div class="items">
+
+                    </div>
+                </div>
+                <div class="category" data-category="ワイン">
+                    <h3>ワイン</h3>
+                    <div class="items">
+
+                    </div>
+                </div>
+                <div class="category" data-category="焼酎">
+                    <h3>焼酎</h3>
+                    <div class="items">
+
+                    </div>  <!-- ここにaccordionを追加していく -->
+                </div>
+                <div class="category" data-category="カクテル">
+                    <h3>カクテル</h3>
+                    <div class="items">
+
+                    </div>
+                </div>
+                <div class="category" data-category="サワー">
+                    <h3>サワー</h3>
+                    <div class="items">
+
+                    </div>
+                </div>
+                <div class="category" data-category="果実酒">
+                    <h3>果実酒</h3>
+                    <div class="items">
+
+                    </div>
+                </div>
+                <div class="category" data-category="その他">
+                    <h3>その他</h3>
+                    <div class="items">
+
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>
