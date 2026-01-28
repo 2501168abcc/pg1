@@ -160,22 +160,20 @@ button{
 }
 
 /* カテゴリのセクション */
-.category {
-  background: #fff;
-  border: 1px solid #f1f1f1;
-  margin: 18px 0 22px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+.category{
+    background: #ffffff;
+    /*border: 1px solid #f1f1f1;*/
+    margin: 18px 0 22px;
+    overflow: hidden;
+    /*box-shadow: 0 2px 10px #0000000a;*/
 }
-
-.category h3 {
-  margin: 0;
-  padding: 14px 16px;
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: .2px;
-  border-bottom: solid 4px #ffa622;
-  
+.category h3{
+    margin: 0;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: .2px;
+    border-bottom: solid 4px #ffa622;
 }
 
 /* アイテムの入れ物（縦リスト） */
