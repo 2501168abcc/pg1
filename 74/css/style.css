@@ -104,7 +104,7 @@ label{
     box-sizing: border-box;
 }
 
-.rangeRow {
+.rangeRow{
     margin-top: 4px;
 }
 
@@ -119,34 +119,22 @@ button{
     font-weight: 600;
 }
 
-
-.btn:disabled {
+.btn:disabled{
     background: #ffd3a5;
 }
 
-
 /* アコーディオンの中身は最初隠す */
-.accordionContent {
+.accordionContent{
     display: none;
-    padding: 8px 12px;
-    background: #f9f9f9;
-    border-left: 2px solid #ccc;
-    border-right: 2px solid #ccc;
-    border-bottom: 2px solid #ccc;
-    border-radius: 0 0 5px 5px;
+    padding: 16px;
+    background: #fFFdfa;
+    border-top: 1px dashed #ffe3bf;
+    border-radius: 0 0 10px 10px;
+    line-height: 1.6;
+    color: #444
 }
-
-/* show クラスが付くと開く */
-.accordionContent.show {
+.accordionContent.show{
     display: block;
-}
-
-/* 見出し（押せる部分） */
-.accordionHeader {
-    padding: 10px 12px;
-    background: #eee;
-    cursor: pointer;
-    border-radius: 5px
 }
 
 /* 並び替えセレクター */
@@ -246,44 +234,41 @@ button{
 }
 
 /* 開状態（.accordionContent.show の兄要素を参照） */
-.accordionContent.show + .dummy { /* ダミー用未使用ルール（優先度調整のため残置） */ }
+
 .accordionContent.show ~ .accordionHeader::after { transform: rotate(45deg); }
 
-/* 中身 */
-.accordionContent {
-  display: none;
-  padding: 12px 14px 14px;
-  background: #fffdfa;
-  border-top: 1px dashed #ffe3bf;
-  border-radius: 0 0 10px 10px;
-  line-height: 1.7;
-  color: #444;
-}
-
-/* 既存の .accordionContent.show を活かす（display切替） */
-.accordionContent.show {
-  display: block;
-}
-
 /* 中身のテキスト行を整える */
-.accordionContent p {
-  margin: 6px 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.accordionContent p{
+    margin: 14px 0;
+    display: block;
+    width: 100%;
 }
 
 /* ラベル部を半タグに（例：甘さ/好み/メモ） */
 .accordionContent p::before {
   content: attr(data-label);
-  display: inline-block;
-  font-size: 12px;
-  color: #a75c00;
-  background: #fff1db;
-  border: 1px solid #ffe3bf;
-  padding: 2px 8px;
-  border-radius: 999px;
-  margin-right: 4px;
+  display: block;
+  font-weight: bold;
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 6px;
+  white-space: nowrap;
+}
+
+/* 値 + 星の横並び部分（新クラス） */
+.accordionContent .value-part {
+    display: flex;
+    align-items: center;
+    gap: 10px;                          /* 数字と星の間隔 */
+    flex-wrap: nowrap;                  /* 横並びを強制（折り返さない） */
+    font-size: 15px;
+}
+
+/* 数字部分（例: 9） */
+.accordionContent .value-part .num {
+    font-weight: bold;
+    min-width: 30px;                    /* 数字が揃うように */
+    text-align: left;
 }
 
 /* メモのみ複数行対応のため調整 */
