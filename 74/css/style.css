@@ -14,8 +14,8 @@ header{
     padding: 10px;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
-
 header img{
     height: 90px;
 }
@@ -34,59 +34,56 @@ nav{
     background-color: #ffa622;
     width: 100%;
 }
-
 nav ul{
     display: flex;
     margin: 0;
     padding: 0;
     list-style: none;
 }
-
 nav ul li{
     flex: 1;
 }
-
 nav a{
-    display: flex;          /* 中の文字をセンター寄せにするため */
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 60px;
     font-weight: 700;
-    padding: 0 12px;        /* 左右のちょい余白 */
+    padding: 0 12px;
     color: #FFFFFF;
     text-decoration: none;
-
 }
-
-
-/* 見た目の強調（任意） */
-nav a:hover {
+nav a:hover{
     background: #ffb84d;
 }
-
-/* アクティブ（今のページ）用のクラス（HTML側で .active を付ける） */
-nav a.active {
+nav a.active{
     background: #ffffff;
     color: #ffa622;
 }
 
-.mainContent {
+.mainContent{
     padding: 30px;
     width: 80%;
     margin-left: auto;margin-right: auto;
+}
+
+.card{
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px 18px 24px;
 }
 
 .titleH2{
     text-align: center;
 }
 
-.formDiv {
+.formDiv{
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-label {
+label{
     font-weight: 600;
     color: #444;
 }
@@ -95,7 +92,7 @@ label {
     color: red;
 }
 
-.input, textarea, select {
+.input, textarea, select{
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -124,14 +121,6 @@ button{
     background: #ffd3a5;
 }
 
-
-/*.formDiv{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-}
-*/
 
 /* アコーディオンの中身は最初隠す */
 .accordionContent {
@@ -393,34 +382,3 @@ button{
 body {
   background: #fffaf2; /* やさしいクリーム色背景 */
 }
-
-/* 既存 .card を一覧でも使う場合の余白感 */
-.card {
-  background: #fff;
-  border-radius: 14px;
-  padding: 18px 18px 24px;
-}
-
-
-/*
-.actionBtn {
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-  margin-top: 8px;
-}
-.btn.small {
-  padding: 6px 10px;
-  font-size: 13px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  background: #f7f7f7;
-  cursor: pointer;
-}
-.btn.small:hover { background: #eee; }
-.btn.small.danger {
-  color: #fff;
-  background: #e74c3c;
-  border-color: #e74c3c;
-}
-.btn.small.danger:hover { filter: brightness(0.95); }
