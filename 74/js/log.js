@@ -48,7 +48,7 @@ function displayDrinks()
 
         //アコーディオンの中の表示内容
         let pSweet = document.createElement("p");
-        pSweet.textContent = "甘さ: " + drink.sweetness;
+        pSweet.textContent = "甘さ：　" + drink.sweetness;
 
         let stars1 = document.createElement("span");
         attachStarsBar(stars1, drink.sweetness, 10);
@@ -56,7 +56,7 @@ function displayDrinks()
 
 
         let pPref = document.createElement("p");
-        pPref.textContent = "好み: " + drink.preference;
+        pPref.textContent = "好み：　" + drink.preference;
 
         let stars2 = document.createElement("span");
         attachStarsBar(stars2, drink.preference, 10);

@@ -98,7 +98,7 @@ label{
 .input, textarea, select{
     width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #DDD;
     border-radius: 8px;
     font-size: 15px;
     box-sizing: border-box;
@@ -111,10 +111,10 @@ label{
 button{  
     width: 100%;
     padding: 12px;
-    background: #ffa622;
+    background: #FFA622;
     border: none;
     border-radius: 10px;
-    color: white;
+    color: #FFFFFF;
     font-size: 16px;
     font-weight: 600;
 }
