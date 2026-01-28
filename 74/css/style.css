@@ -216,7 +216,6 @@ button{
   content: "";
   width: 8px;
   height: 8px;
-  background: #ffa622;
   border-radius: 50%;
   display: inline-block;
 }
