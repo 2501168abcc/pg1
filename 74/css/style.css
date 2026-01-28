@@ -6,7 +6,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: "Yu Gothic", "Yu Gothic UI", sans-serif;
+    font-family: "Yu Gothic", "Yu Gothic UI", "Hiragino Sans", sans-serif;
 }
 
 header{
@@ -149,61 +149,26 @@ button{
     border-radius: 5px
 }
 
-/* 星枠（空の星）を1レイヤー、塗り星をもう1レイヤーで上書き */
-.starsbar {
-  position: relative;
-  display: inline-grid;
-  font-size: 16px;
-  line-height: 1;
-  letter-spacing: 1px; /* お好みで */
+/* 並び替えセレクター */
+.sortSelect{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 18px;
+    flex-wrap: nowrap;
 }
-
-
-/* 下地（空の星） */
-.starsbar::before,
-.starsbar::after {
-  grid-area: 1 / 1;          /* 重ねる */
-  white-space: nowrap;       /* 折り返さない */
+.sortSelect label{
+    white-space: nowrap; 
+    color: #666;
+    font-weight: 600;
 }
-
-
-/* 空の星（下地） */
-.starsbar::before {
-  content: "☆☆☆☆☆☆☆☆☆☆";   /* 最大数ぶん */
-  color: rgba(0,0,0,.25);      /* 薄い色 */
-}
-
-/* 塗り星（上にクリップ表示） */
-.starsbar::after {
-  content: "★★★★★★★★★★";
-  position: absolute;
-  inset: 0;
-  color: #ffa622;
-  width: calc(var(--pct, 0) * 1%); /* 塗り幅（0〜100%） */
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-/* ========== 記録一覧ページ（log.html）向けの追記 ========== */
-
-/* 並び替えセレクタ行 */
-.sortSelect {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0 0 18px;
-}
-.sortSelect label {
-  color: #666;
-  font-weight: 600;
-}
-.sortSelect select {
-  height: 38px;
-  padding: 6px 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background: #fff;
-  font-size: 14px;
+.sortSelect select{
+    height: 38px;
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 14px;
 }
 
 /* カテゴリのセクション */
@@ -326,11 +291,31 @@ button{
   align-items: flex-start;
 }
 
-/* 星バー（既存 .starsbar の見た目微調整） */
-.starsbar {
-  margin-left: 2px;
-  font-size: 17px;         /* 少しだけ大きく */
-  letter-spacing: 1px;
+/*星の表示*/
+.starsbar{
+    position: relative;
+    display: inline-grid;
+    margin-left: 2px;
+    font-size: 17px;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+.starsbar::before, .starsbar::after{
+    grid-area: 1 / 1;
+    white-space: nowrap;
+}
+.starsbar::before{
+    content: "☆☆☆☆☆☆☆☆☆☆";
+    color: #4F4F4F40;
+}
+.starsbar::after{
+    content: "★★★★★★★★★★";
+    position: absolute;
+    inset: 0;
+    color: #ffa622;
+    width: calc(var(--pct, 0) * 1%); /*塗り幅*/
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 /* 操作用ボタン行 */
