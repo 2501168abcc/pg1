@@ -72,7 +72,7 @@ function displayDrinks()
         {
             memoText = "－";
         }
-        pMemo.textContent = "メモ: " + memoText;
+        pMemo.textContent = "メモ：　" + memoText;
 
         //削除、編集ボタンの実装
         let actionBtn = document.createElement("div");
@@ -108,6 +108,7 @@ function displayDrinks()
         header.onclick = function()
         {
             content.classList.toggle("show");
+            accordion.classList.toggle("open");
         };
 
         accordion.appendChild(header);

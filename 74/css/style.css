@@ -78,6 +78,7 @@ nav a.active{
 
 .titleH2{
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .formDiv{
@@ -120,24 +121,10 @@ button{
 }
 
 .btn:disabled{
-    background: #ffd3a5;
+    background: #FFD3A5;
 }
 
-/* アコーディオンの中身は最初隠す */
-.accordionContent{
-    display: none;
-    padding: 16px;
-    background: #fFFdfa;
-    border-top: 1px dashed #ffe3bf;
-    border-radius: 0 0 10px 10px;
-    line-height: 1.6;
-    color: #444
-}
-.accordionContent.show{
-    display: block;
-}
-
-/* 並び替えセレクター */
+/*並び替え*/
 .sortSelect{
     display: flex;
     align-items: center;
@@ -159,13 +146,11 @@ button{
     font-size: 14px;
 }
 
-/* カテゴリのセクション */
+/*カテゴリー*/
 .category{
     background: #ffffff;
-    /*border: 1px solid #f1f1f1;*/
     margin: 18px 0 22px;
     overflow: hidden;
-    /*box-shadow: 0 2px 10px #0000000a;*/
 }
 .category h3{
     margin: 0;
@@ -175,74 +160,71 @@ button{
     letter-spacing: .2px;
     border-bottom: solid 4px #ffa622;
 }
-
-/* アイテムの入れ物（縦リスト） */
-.category .items {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 12px;
+.category .items{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
 }
 
-/* アコーディオンカード */
-.accordion {
-  border: 1px solid #eee;
-  border-radius: 10px;
-  background: #fff;
-  overflow: hidden;
-  transition: box-shadow .2s ease, transform .06s ease;
+/*アコーディオン*/
+.accordion{
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background: #FFF;
+    overflow: hidden;
 }
-.accordion:hover {
-  /*box-shadow: 0 6px 20px rgba(255,166,34,0.10);*/
-  transform: translateY(-1px);
+.accordion:hover{
+    transform: translateY(-2px);
 }
-
-/* 見出し（押せる部分） */
-.accordionHeader {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
-  background: #ffffff;
-  cursor: pointer;
-  border-radius: 10px 10px 0 0;
-  font-weight: 700;
-  color: #333;
-  position: relative;
+.accordionHeader{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 10px 10px 0 0;
+    font-weight: 700;
+    color: #333;
+    position: relative;
 }
-
-/* 見出し左に丸いインジケータ */
-.accordionHeader::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  background: #ffa622;
-  border-radius: 50%;
-  display: inline-block;
+.accordionHeader::before{
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #ffa622;
+    border-radius: 50%;
+    display: inline-block;
 }
-
-/* 見出し右に開閉アイコン */
-.accordionHeader::after {
-  content: "＋";
-  position: absolute;
-  right: 12px;
-  color: #ffa622;
-  font-weight: 900;
-  transition: transform .2s ease;
+.accordionHeader::after{
+    content: "＋";
+    position: absolute;
+    right: 12px;
+    color: #ffa622;
+    font-weight: 900;
+    transition: transform .2s ease;
 }
-
-/* 開状態（.accordionContent.show の兄要素を参照） */
-
-.accordionContent.show ~ .accordionHeader::after { transform: rotate(45deg); }
-
-/* 中身のテキスト行を整える */
+.accordionContent{
+    display: none;
+    padding: 16px;
+    background: #FFFDFA;
+    border-top: 1px dashed #FFE3BF;
+    border-radius: 0 0 10px 10px;
+    line-height: 1.6;
+    color: #444;
+}
+.accordionContent.show{
+    display: block;
+}
+.accordion.open .accordionHeader::after{
+    transform: rotate(45deg);
+}
 .accordionContent p{
     margin: 14px 0;
     display: block;
     width: 100%;
 }
-
-/* ラベル部を半タグに（例：甘さ/好み/メモ） */
 .accordionContent p::before {
   content: attr(data-label);
   display: block;
@@ -252,26 +234,22 @@ button{
   margin-bottom: 6px;
   white-space: nowrap;
 }
-
-/* 値 + 星の横並び部分（新クラス） */
-.accordionContent .value-part {
+.accordionContent .value-part{
     display: flex;
     align-items: center;
-    gap: 10px;                          /* 数字と星の間隔 */
-    flex-wrap: nowrap;                  /* 横並びを強制（折り返さない） */
+    gap: 10px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
     font-size: 15px;
 }
-
-/* 数字部分（例: 9） */
-.accordionContent .value-part .num {
+.accordionContent .value-part .num{
     font-weight: bold;
-    min-width: 30px;                    /* 数字が揃うように */
+    min-width: 30px;
     text-align: left;
 }
-
-/* メモのみ複数行対応のため調整 */
-.accordionContent p.memo {
-  align-items: flex-start;
+.accordionContent p.memo{
+    white-space: normal;
+    overflow-wrap: anywhere;
 }
 
 /*星の表示*/
@@ -301,89 +279,70 @@ button{
     white-space: nowrap;
 }
 
-/* 操作用ボタン行 */
-.actionBtn {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
+.actionBtn{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.btn.small{
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+}
+.btn.danger{
+    background: #ff5e5e;
+}
+.btn:hover:not(:disabled){
+    filter: brightness(0.98);
 }
 
-/* 既存の .btn を小型化するためのバリエーション */
-.btn.small {
-  padding: 8px 12px;
-  font-size: 14px;
-  border-radius: 8px;
-}
-.btn.danger {
-  background: #ff5e5e;
-}
-.btn.danger:hover {
-  filter: brightness(0.95);
+/*空表示用*/
+.category .items:empty::before{
+    content: "まだ記録がありません";
+    display: block;
+    color: #999;
+    font-size: 13px;
+    padding: 10px;
 }
 
-/* 入力ページと同系色のホバー効果（.btn全般） */
-.btn:hover:not(:disabled) {
-  filter: brightness(0.98);
-}
+@media(max-width: 640px){
+    .container{
+        width: 94%;
+    }
+    .mainContent{
+        width: 92%;
+        padding: 20px;
+    }
 
-/* 空表示用（該当カテゴリにアイテムなし） */
-.category .items:empty::before {
-  content: "まだ記録がありません";
-  display: block;
-  color: #999;
-  font-size: 13px;
-  padding: 10px;
-}
-
-/* レスポンシブ（モバイルでカード幅を広く） */
-@media (max-width: 640px) {
-  .container {
-    width: 94%;
-  }
-  .mainContent {
-    width: 92%;
-    padding: 20px;
-  }
-  .accordionHeader {
-    padding-right: 34px; /* 開閉アイコンの余白確保 */
-  }
-}
-
-/* PCでは今の横並びを維持（何も書かなくてOK） */
-
-/* スマホサイズ（幅640px以下）で縦並びに切り替え */
-@media (max-width: 640px) {
-    /* 各行を縦並びに強制 */
+    /* 開閉アイコンが重ならないように右余白確保 */
+    .accordionHeader{
+        padding-right: 34px;
+    }
+    /* 各行（甘さ・好み・メモ）を縦並びに */
     .accordionContent p {
-        display: block !important;        /* flexを上書き */
-        margin: 16px 0;                   /* 行間を広め */
-    }
-
-    /* ラベル部分を上段独占 */
-    .accordionContent p::before {
         display: block !important;
-        margin-bottom: 8px;               /* ラベルと値の間隔 */
-        white-space: nowrap;              /* ラベル折り返さない */
-        font-size: 14px;                  /* 少し小さめで収まる */
+        margin: 16px 0;
+        white-space: normal;
     }
-
-    /* 値＋星の部分を横並びのまま（スマホでも収まるよう調整） */
-    .accordionContent p > span,           /* 値と星のspanを横並び */
-    .accordionContent p > .starsbar {
+    /* ラベル（甘さ / 好み / メモ）を上段に */
+    .accordionContent p::before{
+        display: block !important;
+        margin-bottom: 8px;
+        white-space: nowrap;
+        font-size: 14px;
+    }
+    .accordionContent p > span, .accordionContent p > .starsbar, .accordionContent .value-part{
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        white-space: nowrap;              /* 折り返さない */
+        white-space: nowrap;
     }
-
-    /* 星を少し小さくして横幅節約 */
-    .accordionContent .starsbar {
-        font-size: 16px;                  /* PCより小さめ */
+    .accordionContent .starsbar{
+        font-size: 16px;
         letter-spacing: 0.5px;
+        white-space: nowrap;
     }
-
-    /* メモ本文は複数行OK */
-    .accordionContent p.memo {
+    .accordionContent p.memo{
         white-space: pre-wrap;
         word-break: break-word;
         line-height: 1.6;
