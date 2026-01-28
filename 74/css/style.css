@@ -193,7 +193,7 @@ button{
   transition: box-shadow .2s ease, transform .06s ease;
 }
 .accordion:hover {
-  box-shadow: 0 6px 20px rgba(255,166,34,0.10);
+  /*box-shadow: 0 6px 20px rgba(255,166,34,0.10);*/
   transform: translateY(-1px);
 }
 
@@ -216,6 +216,7 @@ button{
   content: "";
   width: 8px;
   height: 8px;
+  background: #ffa622;
   border-radius: 50%;
   display: inline-block;
 }
