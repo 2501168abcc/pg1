@@ -1,10 +1,12 @@
 body{
+    background: #fffaf2;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-family: "Yu Gothic", "Yu Gothic UI", sans-serif;
 }
 
 header{
@@ -21,11 +23,12 @@ header img{
 }
 
 .container{
+    width: 90%;
+    max-width: 600px;
     background-color: #FFFFFF;
     border: 3px solid #ffa622;
     border-radius: 15px;
-    width: 90%;
-    max-width: 600px;
+    margin: 0 auto;
     overflow: hidden;
     align-items: center;
 }
@@ -376,9 +379,4 @@ button{
   .accordionHeader {
     padding-right: 34px; /* 開閉アイコンの余白確保 */
   }
-}
-
-/* 見た目の一体感（全体の背景色を少し温かく） */
-body {
-  background: #fffaf2; /* やさしいクリーム色背景 */
 }
