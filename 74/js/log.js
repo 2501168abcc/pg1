@@ -65,7 +65,6 @@ function displayDrinks()
 
         let pMemoLabel = document.createElement("p");
         pMemoLabel.textContent = "メモ：";
-        pMemoLabel.style.marginBottom = "3px";
         let pMemo = document.createElement("p");
         let memoText;
         if(drink.memo)
