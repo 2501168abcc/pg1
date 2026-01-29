@@ -305,6 +305,16 @@ button{
     padding: 10px;
 }
 
+footer{
+    width: 100%;
+    margin-top: 60px;
+    padding: 50px;
+    box-sizing: border-box;
+    background-color: #FFA622;
+    color: #FFFFFF;
+    text-align: center;
+}
+
 @media(max-width: 640px){
     .container{
         width: 94%;

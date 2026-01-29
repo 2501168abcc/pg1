@@ -62,6 +62,10 @@ function displayDrinks()
         attachStarsBar(stars2, drink.preference, 10);
         pPref.appendChild(stars2);
 
+
+        let pMemoLabel = document.createElement("p");
+        pMemoLabel.textContent = "メモ：";
+        pMemoLabel.style.marginBottom = "3px";
         let pMemo = document.createElement("p");
         let memoText;
         if(drink.memo)
@@ -72,7 +76,7 @@ function displayDrinks()
         {
             memoText = "－";
         }
-        pMemo.textContent = "メモ：　" + memoText;
+        pMemo.textContent = memoText;
 
         //削除、編集ボタンの実装
         let actionBtn = document.createElement("div");
@@ -101,6 +105,7 @@ function displayDrinks()
 
         content.appendChild(pSweet);
         content.appendChild(pPref);
+        content.appendChild(pMemoLabel);
         content.appendChild(pMemo);
         content.appendChild(actionBtn);
 
